@@ -1,0 +1,193 @@
+:root {
+    --cursor-size: 20px;
+    --cursor-size-hover: 30px;
+    --cursor-color: rgba(255, 255, 255, 0.8);
+    --cursor-blur: 70%;
+    --cursor-border: 5px;
+    --cursor-rotation: 4s;
+    --particle-count: 10;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: #001;
+}
+
+/* Container do cursor */
+.cursor-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Cursor principal */
+.cursor-trail {
+    position: absolute;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    background: rgba(46, 204, 113, 0.2);
+    border: 2px solid #2ecc71;
+    border-radius: 50%;
+    transform-origin: center;
+    pointer-events: none;
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.3);
+    transition: width 0.3s, height 0.3s, opacity 0.3s;
+}
+
+.cursor-trail::before {
+    content: '';
+    position: absolute;
+    inset: calc(-1 * var(--cursor-border));
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        #03a9f4,
+        #e91e63,
+        #9c27b0,
+        #ff5722,
+        #03a9f4
+    );
+    animation: rotate var(--cursor-rotation) linear infinite;
+}
+
+.cursor-trail::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 50%;
+    background: #001;
+}
+
+/* Partículas do rastro */
+.cursor-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #2ecc71;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+}
+
+/* Círculos de fundo */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    animation: float 20s infinite;
+    will-change: transform;
+}
+
+.circle.one {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    left: -150px;
+    animation-delay: 0s;
+}
+
+.circle.two {
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+.circle.three {
+    width: 250px;
+    height: 250px;
+    bottom: -125px;
+    left: 50%;
+    animation-delay: -10s;
+}
+
+.circle.four {
+    width: 150px;
+    height: 150px;
+    top: 20%;
+    left: 20%;
+    animation-delay: -15s;
+}
+
+/* Animações */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(50px, 50px);
+    }
+    50% {
+        transform: translate(0, 100px);
+    }
+    75% {
+        transform: translate(-50px, 50px);
+    }
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    :root {
+        --cursor-size: 15px;
+        --cursor-size-hover: 25px;
+        --cursor-blur: 50%;
+    }
+    
+    .cursor-particle {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --cursor-size: 12px;
+        --cursor-size-hover: 20px;
+        --cursor-blur: 30%;
+    }
+    
+    .cursor-particle {
+        width: 4px;
+        height: 4px;
+    }
+}
+
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    .cursor-container {
+        display: none;
+    }
+    
+    body {
+        cursor: auto;
+    }
+    
+    .cursor-trail,
+    .cursor-particle {
+        display: none;
+    }
+}
+
+.menu-button:hover .glow-effect {
+    opacity: 1;
+} 

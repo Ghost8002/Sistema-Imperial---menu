@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema Imperial</title>
+  <meta name="description" content="Sistema de gestão da Imperial Sistemas" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/utils/reset.css">
+  <link rel="stylesheet" href="css/utils/variables.css">
+  <link rel="stylesheet" href="css/components/background.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/menu.css">
+  <link rel="stylesheet" href="css/components/glow-effect.css">
+  <link rel="stylesheet" href="css/components/modal.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="background">
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <div class="circle three"></div>
+    <div class="circle four"></div>
+  </div>
+  
+  <main class="container">
+    <header class="header">
+      <h1>Imperial Sistemas</h1>
+    </header>
+
+    <nav class="sector-nav">
+      <button class="sector-tab active" data-sector="home">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </button>
+      <button class="sector-tab" data-sector="fiscal">
+        <i class="fas fa-calculator"></i>
+        <span>Fiscal</span>
+      </button>
+      <button class="sector-tab" data-sector="pessoal">
+        <i class="fas fa-users"></i>
+        <span>Pessoal</span>
+      </button>
+      <button class="sector-tab" data-sector="administrativo">
+        <i class="fas fa-building"></i>
+        <span>Administrativo</span>
+      </button>
+      <button class="sector-tab" data-sector="ti">
+        <i class="fas fa-laptop-code"></i>
+        <span>T.I</span>
+      </button>
+    </nav>
+    
+    <div class="sector-content">
+      <div id="home-panel" class="sector-panel active">
+        <h3>Bem-vindo ao Imperial Sistemas</h3>
+        <div class="menu-card">
+          <a href="sobre.html" class="menu-button">
+            <i class="fas fa-info-circle"></i>
+            <span>Sobre o Sistema</span>
+          </a>
+          <a href="sobre.html#manual" class="menu-button">
+            <i class="fas fa-book"></i>
+            <span>Manual do Usuário</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Painel Fiscal -->
+      <div id="fiscal-panel" class="sector-panel">
+        <h3>Setor Fiscal</h3>
+        <div class="menu-card">
+          <a href="https://app-ncm-system-for-imperial.streamlit.app/" target="_blank" class="menu-button">
+            <i class="fas fa-file-invoice"></i>
+            <span>Processador de NCM</span>
+          </a>
+          <a href="https://situacao-fiscal-imperial-sistemas.streamlit.app/" target="_blank" class="menu-button">
+            <i class="fas fa-chart-line"></i>
+            <span>Situação Fiscal</span>
+          </a>
+          <a href="https://calculo-nf-imperial.streamlit.app/" target="_blank" class="menu-button">
+            <i class="fas fa-calculator"></i>
+            <span>Calculadora de Notas Fiscais</span>
+          </a>
+          <a href="https://clinica-imperial-sistemas.streamlit.app/" target="_blank" class="menu-button">
+            <i class="fas fa-calculator"></i>
+            <span>Análise de Clínicas</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Painel Pessoal -->
+      <div id="pessoal-panel" class="sector-panel">
+        <!-- <h3>Setor Pessoal</h3>
+        <div class="menu-card">
+          <a href="https://sistema-rh-imperial.streamlit.app/" target="_blank" class="menu-button">
+            <i class="fas fa-user-plus"></i>
+            <span>Gestão de RH</span>
+          </a>
+          <a href="https://folha-pagamento-imperial.streamlit.app/" target="_blank" class="menu-button">
+            <i class="fas fa-money-bill-wave"></i>
+            <span>Folha de Pagamento</span>
+          </a>
+          <a href="https://ponto-eletronico-imperial.streamlit.app/" target="_blank" class="menu-button">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Ponto Eletrônico</span>
+          </a>
+          <a href="https://beneficios-imperial.streamlit.app/" target="_blank" class="menu-button">
+            <i class="fas fa-gift"></i>
+            <span>Gestão de Benefícios</span>
+          </a> -->
+        </div>
+      </div>
+
+      <!-- Painel Administrativo -->
+      <div id="administrativo-panel" class="sector-panel">
+        <!-- <h3>Setor Administrativo</h3>
+        <div class="menu-card">
+          <a href="https://contratos-imperial.streamlit.app/" target="_blank" class="menu-button">
+            <i class="fas fa-file-contract"></i>
+            <span>Gestão de Contratos</span>
+          </a>
+          <a href="https://estoque-imperial.streamlit.app/" target="_blank" class="menu-button">
+            <i class="fas fa-box"></i>
+            <span>Controle de Estoque</span>
+          </a>
+          <a href="https://financeiro-imperial.streamlit.app/" target="_blank" class="menu-button">
+            <i class="fas fa-chart-pie"></i>
+            <span>Gestão Financeira</span>
+          </a>
+          <a href="https://compras-imperial.streamlit.app/" target="_blank" class="menu-button">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Gestão de Compras</span>
+          </a>
+        </div> -->
+      </div>
+
+      <!-- Painel T.I -->
+      <div id="ti-panel" class="sector-panel">
+        <h3>Setor de Tecnologia da Informação</h3>
+        <div class="menu-card">
+          <a href="https://share.streamlit.io/" target="_blank" class="menu-button">
+            <!-- <i class="fas fa-ticket-alt"></i> -->
+            <i class="fas fa-code"></i>
+            <span>Deploy de Sistemas</span>
+          </a>
+          <a href="https://github.com/Ghost8002?tab=repositories" target="_blank" class="menu-button">
+            <i class="fas fa-network-wired"></i>
+            <span>Repositórios dos Sistemas</span>
+          </a>
+          <a href="https://app.netlify.com/teams/ghost8002/projects" target="_blank" class="menu-button">
+            <i class="fas fa-shield-alt"></i>
+            <span>Ospedagem do Site</span>
+          </a>
+          <!-- <a href="https://desenvolvimento-imperial.streamlit.app/" target="_blank" class="menu-button">
+            <i class="fas fa-code"></i>
+            <span>Gestão de Desenvolvimento</span>
+          </a> -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal de Login -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Login - Área de T.I</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Usuário:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/database.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

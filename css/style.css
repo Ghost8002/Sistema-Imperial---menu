@@ -1,0 +1,620 @@
+/* Estilos gerais */
+:root {
+    --primary-color: #00ff9d;
+    --secondary-color: #00cc7e;
+    --success-color: #00ff9d;
+    --danger-color: #ff4757;
+    --light-color: #1a1a1a;
+    --dark-color: #121212;
+    --text-color: #ffffff;
+    --text-secondary: #b3b3b3;
+    --glass-bg: rgba(26, 26, 26, 0.3);
+    --glass-border: rgba(0, 255, 157, 0.1);
+    --glass-shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos do cabeçalho */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px var(--glass-shadow);
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 157, 0.05),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.header:hover::before {
+    transform: translateX(100%);
+}
+
+.header h1 {
+    color: var(--primary-color);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+.header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.header h2 {
+    color: var(--text-secondary);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.2);
+}
+
+/* Estilos da navegação */
+.sector-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px var(--glass-shadow);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: nowrap;
+}
+
+.sector-tab {
+    padding: 1.2rem 2.5rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    background: var(--glass-bg);
+    color: var(--text-color);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px var(--glass-shadow);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    flex: 0 1 auto;
+    min-width: 120px;
+}
+
+.sector-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 157, 0.1),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.sector-tab:hover::before {
+    transform: translateX(100%);
+}
+
+.sector-tab i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+}
+
+.sector-tab:hover {
+    background: rgba(0, 255, 157, 0.1);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 255, 157, 0.15);
+    border-color: rgba(0, 255, 157, 0.3);
+}
+
+.sector-tab:hover i {
+    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+.sector-tab.active {
+    background: rgba(0, 255, 157, 0.15);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
+}
+
+.sector-tab.active i {
+    color: var(--primary-color);
+}
+
+.sector-tab span {
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+/* Estilos do conteúdo */
+.sector-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 1rem auto;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+}
+
+.sector-panel {
+    display: none;
+}
+
+.sector-panel.active {
+    display: block;
+}
+
+.sector-panel h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+}
+
+/* Estilos dos cards do menu */
+.menu-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px var(--glass-shadow);
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2.5rem;
+    background: var(--glass-bg);
+    border-radius: 12px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px var(--glass-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 157, 0.1),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.menu-button:hover::before {
+    transform: translateX(100%);
+}
+
+.menu-button:hover {
+    background: rgba(0, 255, 157, 0.1);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 255, 157, 0.15);
+    border-color: rgba(0, 255, 157, 0.3);
+}
+
+.menu-button i {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.menu-button:hover i {
+    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+.menu-button span {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Estilos do Modal de Login */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(8px);
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--glass-bg);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px var(--glass-shadow);
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    margin: 20px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    position: relative;
+    padding-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+}
+
+.modal-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.75rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
+    background: rgba(0, 255, 157, 0.1);
+    transform: rotate(90deg);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1.2rem 2.5rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+    background: var(--glass-bg);
+    color: var(--text-color);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px var(--glass-shadow);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(0, 255, 157, 0.1);
+    background: rgba(0, 255, 157, 0.05);
+}
+
+.form-group input::placeholder {
+    color: var(--text-secondary);
+}
+
+#login-form button {
+    width: 100%;
+    padding: 1.2rem 2.5rem;
+    background: var(--glass-bg);
+    color: var(--text-color);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px var(--glass-shadow);
+}
+
+#login-form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 157, 0.1),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+#login-form button:hover {
+    background: rgba(0, 255, 157, 0.1);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 255, 157, 0.15);
+    border-color: rgba(0, 255, 157, 0.3);
+}
+
+#login-form button:hover::before {
+    transform: translateX(100%);
+}
+
+#login-form button:active {
+    transform: translateY(0);
+}
+
+.error-message {
+    color: var(--danger-color);
+    background: rgba(255, 71, 87, 0.1);
+    border: 1px solid rgba(255, 71, 87, 0.2);
+    border-radius: 12px;
+    padding: 1.2rem 2.5rem;
+    margin-top: 1.5rem;
+    display: none;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    animation: shake 0.5s ease-in-out;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px var(--glass-shadow);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
+
+/* Animação de entrada do modal */
+.modal.active .modal-content {
+    animation: modalSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+#home-panel {
+    text-align: center;
+    padding: 2rem;
+}
+
+#home-panel h3 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+#home-panel .menu-card {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+#home-panel .menu-button {
+    padding: 2rem;
+    font-size: 1.3rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#home-panel .menu-button:hover {
+    transform: translateY(-5px);
+    background: var(--glass-hover);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+#home-panel .menu-button i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+#home-panel .menu-button:hover i {
+    transform: scale(1.1);
+}
+
+#home-panel .menu-button span {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    font-weight: 500;
+    text-align: center;
+}
+
+.back-container {
+    position: relative;
+    margin: 3rem auto;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px var(--glass-shadow);
+    min-width: 200px;
+    justify-content: center;
+}
+
+.back-button:hover {
+    background: rgba(0, 255, 157, 0.1);
+    color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 255, 157, 0.15);
+    border-color: rgba(0, 255, 157, 0.3);
+}
+
+.back-button i {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.back-button:hover i {
+    transform: translateX(-5px);
+} 

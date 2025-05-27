@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Sistema - Imperial Sistemas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/utils/reset.css">
+    <link rel="stylesheet" href="css/utils/variables.css">
+    <link rel="stylesheet" href="css/components/background.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/menu.css">
+    <link rel="stylesheet" href="css/components/glow-effect.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="circle one"></div>
+        <div class="circle two"></div>
+        <div class="circle three"></div>
+        <div class="circle four"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1>Imperial Sistemas</h1>
+            <h2>Documentação do Sistema</h2>
+        </header>
+
+        <nav class="sector-nav">
+            <button class="sector-tab active" data-sector="sobre">
+                <i class="fas fa-info-circle"></i>
+                <span>Sobre o Sistema</span>
+            </button>
+            <button class="sector-tab" data-sector="manual">
+                <i class="fas fa-book"></i>
+                <span>Manual do Usuário</span>
+            </button>
+        </nav>
+
+        <div class="sector-content">
+            <!-- Painel Sobre o Sistema -->
+            <div id="sobre-panel" class="sector-panel active">
+                <h3>Sobre o Sistema</h3>
+                <div class="menu-card">
+                    <div class="info-section">
+                        <h4><i class="fas fa-star"></i> Visão Geral</h4>
+                        <p>O Imperial Sistemas é uma plataforma integrada de gestão empresarial, desenvolvida para otimizar e automatizar processos internos da empresa.</p>
+                    </div>
+                    <div class="info-section">
+                        <h4><i class="fas fa-cogs"></i> Funcionalidades</h4>
+                        <ul>
+                            <li>Gestão Fiscal Completa</li>
+                            <li>Controle de Pessoal</li>
+                            <li>Gestão Administrativa</li>
+                            <li>Suporte Técnico Integrado</li>
+                        </ul>
+                    </div>
+                    <div class="info-section">
+                        <h4><i class="fas fa-shield-alt"></i> Segurança</h4>
+                        <p>Sistema desenvolvido com as mais modernas práticas de segurança e proteção de dados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Painel Manual do Usuário -->
+            <div id="manual-panel" class="sector-panel">
+                <h3>Manual do Usuário</h3>
+                <div class="menu-card">
+                    <div class="info-section">
+                        <h4><i class="fas fa-graduation-cap"></i> Primeiros Passos</h4>
+                        <p>Guia rápido para começar a usar o sistema:</p>
+                        <ol>
+                            <li>Acesse o sistema com suas credenciais</li>
+                            <li>Navegue pelas abas do menu principal</li>
+                            <li>Utilize os recursos específicos de cada setor</li>
+                        </ol>
+                    </div>
+                    <div class="info-section">
+                        <h4><i class="fas fa-tasks"></i> Funcionalidades por Setor</h4>
+                        <ul>
+                            <li>Fiscal: Gestão de notas e cálculos</li>
+                            <li>Pessoal: Controle de RH e folha</li>
+                            <li>Administrativo: Gestão de processos</li>
+                            <li>T.I: Suporte e manutenção</li>
+                        </ul>
+                    </div>
+                    <div class="info-section">
+                        <h4><i class="fas fa-question-circle"></i> Suporte</h4>
+                        <p>Em caso de dúvidas, entre em contato com o setor de T.I através do sistema de chamados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="back-container">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Voltar ao Menu Principal</span>
+        </a>
+    </div>
+
+    <script src="js/tabs.js"></script>
+</body>
+</html> 
